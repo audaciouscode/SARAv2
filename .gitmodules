@@ -1,0 +1,3 @@
+[submodule "phone_code/plugins/cordova-plugin-certiscan-ecap"]
+	path = phone_code/plugins/cordova-plugin-certiscan-ecap
+	url = https://github.com/audacious-software/Cordova-Plugin-CertiScan-eCap.git

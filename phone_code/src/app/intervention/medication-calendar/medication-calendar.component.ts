@@ -6,7 +6,9 @@ import { AddEventModalPage } from './add-event-modal/add-event-modal.page';
 import { DateRangeUnit } from 'aws-sdk/clients/securityhub';
 import { AddMedicationPage } from './add-medication/add-medication.page';
 import { UserProfileService } from 'src/app/user/user-profile/user-profile.service';
+
 import moment from 'moment';
+
 // import { CalModalPage } from '../pages/cal-modal/cal-modal.page';
 
 @Component({
@@ -257,6 +259,13 @@ export class MedicationCalendarComponent implements OnInit {
         this.openAddMedicationModal(dateStr);
     }
 
+    async scanEcap() {
+        const certiscan = window['certiscan']
+
+        certiscan.scan(function(responseTxt) {
+            alert(responseTxt)
+        })
+    }
 
     // async openAddEventModal() {
     //     /*
