@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 import { BehaviorSubject, forkJoin, Subscription } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 import * as moment from 'moment';
-import { OneSignal } from '@ionic-native/onesignal/ngx';
+// import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { NetworkService, ConnectionStatus } from '../../storage/network.service';
 import { AppVersion } from '@awesome-cordova-plugins/app-version/ngx';
 
@@ -22,8 +22,9 @@ export class UserProfileService {
 
   constructor(private http: HttpClient,
               private networkSvc: NetworkService,
-              private appVersion: AppVersion,
-              private oneSignal: OneSignal) { }
+              private appVersion: AppVersion) { }
+//              private appVersion: AppVersion,
+//              private oneSignal: OneSignal) { }
 
   //returns Observable that we can subscribed to so as to trigger an action after 
   //user profiles have been initialized
@@ -123,13 +124,13 @@ export class UserProfileService {
   }
 
   addOneSignalPlayerId(){
-    this.oneSignal.getIds().then(async (id) =>  {
+    /* this.oneSignal.getIds().then(async (id) =>  {
       const playerId = id.userId;
       this.userProfile.oneSignalPlayerId = id.userId;
       console.log("onesignal player id: " + id);
       this.saveProfileToDevice();
       this.saveToServer();
-    });
+    }); */
   }
 
   addAppVersion(){

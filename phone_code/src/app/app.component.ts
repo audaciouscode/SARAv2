@@ -55,8 +55,8 @@ export class AppComponent {
 
     this.isAYA = true;
 
-    router.events.subscribe(
-			( event: RouterEvent ) : void => {
+    router.events.subscribe(function(event) {
+			// ( event: Event_2|RouterEvent ) : void => {
 
         //this.isShowingRouteLoadIndicator = false;
         var asyncLoadCount = 0;

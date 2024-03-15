@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //import { PreLoad } from '../../PreLoad';
 import { DatabaseService } from 'src/app/monitor/database.service';
 import { UserProfileService } from 'src/app/user/user-profile/user-profile.service';
-import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
+// import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
 
 @Component({
   selector: 'app-sample-survey',
@@ -16,12 +16,12 @@ export class SampleSurveyComponent implements OnInit {
 
   constructor(
     private userProfileService: UserProfileService,
-    private mobileAccessibility: MobileAccessibility,
+    // private mobileAccessibility: MobileAccessibility,
     private appUsageDb: DatabaseService
   ) { }
 
   ngOnInit() {
-    this.mobileAccessibility.usePreferredTextZoom(false);
+    // this.mobileAccessibility.usePreferredTextZoom(false);
   }
   
   ionViewDidEnter(){
@@ -32,7 +32,7 @@ export class SampleSurveyComponent implements OnInit {
 
  ionViewDidLeave(){
     //
-    this.mobileAccessibility.usePreferredTextZoom(true);
+    // this.mobileAccessibility.usePreferredTextZoom(true);
     this.appUsageDb.saveAppUsageExit("cg_survey_page");   
 
  }

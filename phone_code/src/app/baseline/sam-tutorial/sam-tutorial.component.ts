@@ -1,11 +1,11 @@
 import { AfterContentChecked, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { SwiperComponent } from "swiper/angular";
+// import { SwiperComponent } from "swiper/angular";
 // import Swiper core and required modules
-import SwiperCore, { Pagination } from "swiper";
+// import SwiperCore, { Pagination } from "swiper";
 import { Router } from '@angular/router';
 
 // install Swiper modules
-SwiperCore.use([Pagination]);
+// SwiperCore.use([Pagination]);
 
 @Component({
     selector: 'app-sam-tutorial',
@@ -16,7 +16,7 @@ SwiperCore.use([Pagination]);
 
 export class SamTutorialComponent implements AfterContentChecked {
 
-    @ViewChild('swiper') swiper: SwiperComponent;
+    // @ViewChild('swiper') swiper: SwiperComponent;
 
     slides = [{
             "text": "Welcome! My name is SAM. What’s yours?",
@@ -60,14 +60,14 @@ export class SamTutorialComponent implements AfterContentChecked {
 
     constructor(private router: Router) { }
     ngAfterContentChecked() {
-        if (this.swiper) {
-            this.swiper.updateSwiper({});
-        }
+//        if (this.swiper) {
+//            this.swiper.updateSwiper({});
+//        }
     }
 
-    onSwiper([swiper]) {
-        console.log(swiper);
-    }
+//    onSwiper([swiper]) {
+//        console.log(swiper);
+//    }
 
     onSlideChange() {
         console.log('slide change');

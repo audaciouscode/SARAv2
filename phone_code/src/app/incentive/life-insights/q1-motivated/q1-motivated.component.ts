@@ -9,7 +9,7 @@ import { Chart } from 'chart.js';
 })
 export class Q1MotivatedComponent implements OnInit {
 
-  @ViewChild('lineCanvas', {static: true}) lineCanvas: ElementRef<HTMLDivElement>;
+  @ViewChild('lineCanvas', {static: true}) lineCanvas: ElementRef<HTMLCanvasElement>;
   //@Input() inputStr : string;
   //@Input() jsonObj : any;
   private _jsonObj: any;
@@ -70,7 +70,7 @@ export class Q1MotivatedComponent implements OnInit {
           {
             label: "My First dataset",
             fill: false,
-            lineTension: 0.1,
+            // lineTension: 0.1,
             backgroundColor: "rgba(75,192,192,0.4)",
             borderColor: "rgba(75,192,192,1)",
             borderCapStyle: "butt",
@@ -92,11 +92,13 @@ export class Q1MotivatedComponent implements OnInit {
         ]
       },
       options: {
-        tooltips: {enabled: false},
-        hover: {mode: null},
-        legend: {
+        plugins: {
+          tooltip: {enabled: false},
+          legend: {
             display: false
+          }
         },
+        hover: {mode: null},
         maintainAspectRatio: false,
         layout: {
           padding: {
@@ -107,26 +109,26 @@ export class Q1MotivatedComponent implements OnInit {
           }
         },
         scales: {
-          yAxes: [{
-            scaleLabel: {
+          y: {
+            title: {
               display: true,
-              labelString: this.qYaxis,
-              fontColor: "#000"
+              text: this.qYaxis
+              // fontColor: "#000"
             },
+            max: 4,
+            min: 0,
             ticks: {
-              max: 4,
-              min: 0,
               stepSize: 1,
               display: true
             }
-          }],
-          xAxes: [{
-            scaleLabel: {
+          },
+          x: {
+            title: {
               display: true,
-              labelString: 'Day',
-              fontColor: "#000"
+              text: 'Day'
+              // fontColor: "#000"
             }
-          }],
+          }
         }
       }
     });

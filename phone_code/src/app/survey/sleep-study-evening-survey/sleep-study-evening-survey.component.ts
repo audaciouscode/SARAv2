@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserProfileService } from 'src/app/user/user-profile/user-profile.service';
-import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
+// import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
 import { DatabaseService } from 'src/app/monitor/database.service';
 
 @Component({
@@ -13,11 +13,11 @@ export class SleepStudyEveningSurveyComponent implements OnInit {
   whichImage;
 
   constructor(private userProfileService: UserProfileService,
-    private mobileAccessibility: MobileAccessibility,
+    // private mobileAccessibility: MobileAccessibility,
     private appUsageDb: DatabaseService) { }
 
   ngOnInit() {
-    this.mobileAccessibility.usePreferredTextZoom(false);
+    // this.mobileAccessibility.usePreferredTextZoom(false);
     this.whichImage = "https://sara-public.s3.amazonaws.com/survey_images/gracie_sleep.jpg";
   }
 
@@ -42,7 +42,7 @@ export class SleepStudyEveningSurveyComponent implements OnInit {
       });
       */
       
-      this.mobileAccessibility.usePreferredTextZoom(true);
+      // this.mobileAccessibility.usePreferredTextZoom(true);
       this.appUsageDb.saveAppUsageExit("sleep_evening_survey_page");
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserProfileService } from 'src/app/user/user-profile/user-profile.service';
-import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
+// import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
 import { DatabaseService } from 'src/app/monitor/database.service';
 
 @Component({
@@ -15,11 +15,11 @@ export class DogsSurveyComponent implements OnInit {
   
 
   constructor(private userProfileService: UserProfileService,
-    private mobileAccessibility: MobileAccessibility,
+    // private mobileAccessibility: MobileAccessibility,
     private appUsageDb: DatabaseService) { }
 
     ngOnInit() {
-      this.mobileAccessibility.usePreferredTextZoom(false);
+      // this.mobileAccessibility.usePreferredTextZoom(false);
       this.whichImage = "https://sara-public.s3.amazonaws.com/notification_images/gracie_guilty.jpg";
     }
   
@@ -47,7 +47,7 @@ export class DogsSurveyComponent implements OnInit {
       });
       */
       
-      this.mobileAccessibility.usePreferredTextZoom(true);
+      // this.mobileAccessibility.usePreferredTextZoom(true);
       this.appUsageDb.saveAppUsageExit("dogs_survey_page");
     
    }

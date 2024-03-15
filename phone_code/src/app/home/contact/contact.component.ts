@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { DatabaseService } from 'src/app/monitor/database.service';
-import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
+// import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +11,7 @@ import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
 export class ContactComponent implements OnInit {
 
   constructor(private menuCtrl:MenuController,
-    private mobileAccessibility: MobileAccessibility,
+    // private mobileAccessibility: MobileAccessibility,
     private appUsageDb: DatabaseService) { }
 
   ngOnInit() {

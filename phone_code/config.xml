@@ -35,7 +35,7 @@
     <preference name="CordovaWebViewEngine" value="CDVUIWebViewEngine" />
     <platform name="android">
         <preference name="Scheme" value="http" />
-        <preference name="android-minSdkVersion" value="19" />
+        <preference name="android-Version" value="23" />
         <preference name="android-targetSdkVersion" value="33" />
         <preference name="android-compileSdkVersion" value="33" />
         <allow-intent href="market:*" />

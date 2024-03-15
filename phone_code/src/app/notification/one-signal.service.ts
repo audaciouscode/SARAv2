@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { OneSignal } from '@ionic-native/onesignal/ngx';
+// import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { AlertController } from '@ionic/angular';
 
 import * as moment from 'moment';
@@ -15,7 +15,7 @@ export class OneSignalService {
   formattedTime: string;
 
   constructor(
-    private oneSignal: OneSignal,
+    // private oneSignal: OneSignal,
     private alertCtrl: AlertController,
     private http: HttpClient,
     private userProfileService: UserProfileService
@@ -27,14 +27,14 @@ export class OneSignalService {
       
       //this.oneSignal.startInit('YOUR ONESIGNAL APP ID', 'YOUR ANDROID ID');
       console.log("--Onesignal-- " + "init called");
-      this.oneSignal.startInit(environment.oneSignalAppId, environment.firebaseConfig.messagingSenderId);
+//      this.oneSignal.startInit(environment.oneSignalAppId, environment.firebaseConfig.messagingSenderId);
 
-      this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.None);
+//      this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.None);
       //this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
     
       //Sets a notification received handler. Only called if the app is 
       //running in the foreground at the time the notification was received.
-      this.oneSignal.handleNotificationReceived().subscribe(data => {
+/*      this.oneSignal.handleNotificationReceived().subscribe(data => {
         this.time = new Date().getTime();
         this.formattedTime = moment().format('MMMM Do YYYY, h:mm:ss a Z');
         console.log("notification is received at: "+this.time+" formatted: "+this.formattedTime);
@@ -46,14 +46,14 @@ export class OneSignalService {
         //this.showAlert(title+" "+msg, "notification is received at: "+this.time+" formatted: "+this.formattedTime);
 
       });
-      
+*/      
       
       //Sets a notification opened handler. The instance will be called when 
       //a notification is tapped on from the notification shade (ANDROID) or 
       //notification center (iOS), or when closing an Alert notification shown in the app 
       //(if InAppAlert is enabled in inFocusDisplaying, below).
 
-      this.oneSignal.handleNotificationOpened().subscribe(data => {
+ /*     this.oneSignal.handleNotificationOpened().subscribe(data => {
         // do something when a notification is opened
         this.time = new Date().getTime();
         this.formattedTime = moment().format('MMMM Do YYYY, h:mm:ss a Z');
@@ -62,13 +62,13 @@ export class OneSignalService {
         //this.showAlert('Notification opened', 'You already read this before', additionalData.task);     
         //this.showAlert('Notification opened',  "notification is opened at: "+this.time+" formatted: "+this.formattedTime);
       });
-
+*/
       
 
       //--- clearOneSignalNotifications
       //--- https://documentation.onesignal.com/docs/cordova-sdk
       
-      this.oneSignal.endInit();   
+      // this.oneSignal.endInit();   
       
       // iOS - Prompts the user for notification permissions.
       //    * Since this shows a generic native prompt, we recommend instead using an In-App Message to prompt for notification permission (See step 6) to better communicate to your users what notifications they will get.
@@ -82,13 +82,14 @@ export class OneSignalService {
       });
       */
       
-      this.oneSignal.getPermissionSubscriptionState().then(status=>{
+/*      this.oneSignal.getPermissionSubscriptionState().then(status=>{
         console.log("--Onesignal-- " + JSON.stringify(status));
         window.localStorage.setItem("oneSignalPlayerId", ""+status.subscriptionStatus.userId);  
         this.userProfileService.userProfile.oneSignalPlayerId  = status.subscriptionStatus.userId;
         this.userProfileService.saveProfileToDevice();
         this.userProfileService.saveToServer();
       });
+*/
   }
 
   async showAlert(title: any, msg: any) {
